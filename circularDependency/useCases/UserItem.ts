@@ -1,7 +1,7 @@
 import { Constructor, injectable } from '../../containers/decorator';
+import { Container } from '../../containers/Container';
 import { entities } from '../entities';
 import { Item } from './Item';
-import { Container } from '../../containers/Container';
 
 export abstract class UserItem {
   abstract give(itemId: entities.Item.Id, quantity: number): Promise<void>;

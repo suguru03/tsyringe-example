@@ -1,7 +1,7 @@
 import * as tsyringe from 'tsyringe';
-import { useCases } from './useCases';
-import { entities } from './entities';
 import { Container } from '../containers/Container';
+import { entities } from './entities';
+import { useCases } from './useCases';
 
 (async () => {
   const container = tsyringe.container.resolve(Container);

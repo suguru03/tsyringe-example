@@ -1,5 +1,5 @@
-import { injectable } from '../../containers/decorator';
 import { entities } from '../entities';
+import { injectable } from '../../containers/decorator';
 import { UserItem } from './UserItem';
 
 export abstract class UserReward {

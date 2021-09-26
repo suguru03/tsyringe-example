@@ -1,5 +1,5 @@
-import { injectable } from '../../containers/decorator';
 import { entities } from '../entities';
+import { injectable } from '../../containers/decorator';
 
 export abstract class Item {
   abstract get(id: entities.Item.Id): Promise<entities.Item>;
