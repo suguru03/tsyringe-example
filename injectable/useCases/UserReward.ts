@@ -3,7 +3,7 @@ import { entities } from '../entities';
 import { UserItem } from './UserItem';
 
 export abstract class UserReward {
-  abstract give(id: entities.Reward.Id): Promise<void>;
+  abstract give(id: entities.Reward.Id, quantity: number): Promise<void>;
 }
 
 export namespace UserReward {
@@ -16,8 +16,8 @@ export namespace UserReward {
 class UserRewardUseCase implements UserReward {
   constructor(private readonly userItem: UserItem, private readonly repository: UserReward.Repository) {}
 
-  async give(id: entities.Reward.Id): Promise<void> {
+  async give(id: entities.Reward.Id, quantity: number): Promise<void> {
     const reward = await this.repository.get(id);
-    await this.userItem.give(reward.itemId, reward.quantity);
+    await this.userItem.give(reward.itemId, reward.quantity * quantity);
   }
 }

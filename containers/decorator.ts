@@ -3,7 +3,7 @@ import { Lifecycle } from 'tsyringe';
 
 type Constructor<T = any> = new (...args: any[]) => T;
 type AbstractConstructor<T = any> = abstract new (...args: any[]) => T;
-type Token<T = any> = tsyringe.InjectionToken<T> | AbstractConstructor<T>;
+export type Token<T = any> = tsyringe.InjectionToken<T> | AbstractConstructor<T>;
 
 export function injectable(...tokens: Token[]) {
   return (Class: Constructor) => {
