@@ -1,8 +1,9 @@
 import * as tsyringe from 'tsyringe';
-import { Token } from './decorator';
+import { injectable, Token } from './decorator';
 
+@injectable()
 export class Container {
-  constructor(private readonly container = tsyringe.container) {}
+  private readonly container = tsyringe.container;
 
   resolve<T>(token: Token<T>): T {
     return this.container.resolve(token as tsyringe.InjectionToken);

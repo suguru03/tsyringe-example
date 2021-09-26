@@ -1,8 +1,8 @@
 import * as tsyringe from 'tsyringe';
 import { Lifecycle } from 'tsyringe';
 
-type Constructor<T = any> = new (...args: any[]) => T;
-type AbstractConstructor<T = any> = abstract new (...args: any[]) => T;
+export type Constructor<T = any> = new (...args: any[]) => T;
+export type AbstractConstructor<T = any> = abstract new (...args: any[]) => T;
 export type Token<T = any> = tsyringe.InjectionToken<T> | AbstractConstructor<T>;
 
 export function injectable(...tokens: Token[]) {

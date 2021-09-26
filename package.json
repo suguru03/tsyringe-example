@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "ts-node": "ts-node --require reflect-metadat",
+    "ts-node": "TS_NODE_TRANSPILE_ONLY=1 ts-node --require reflect-metadata",
     "lint-staged": "lint-staged"
   },
   "dependencies": {
