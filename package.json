@@ -4,9 +4,33 @@
   "main": "index.js",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "lint-staged": "lint-staged"
+  },
+  "dependencies": {
+    "tsyringe": "^4.6.0"
+  },
   "devDependencies": {
     "@types/node": "^16.10.1",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.1",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm-run-all lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,json,yml,md}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }
